@@ -1,43 +1,11 @@
+MechaCar_mpg <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
 head(mpg)
-plt + geom_col() + xlab("Manufacturing Company") + ylab("Number of Vehicles in Dataset") #plot bar plot with labels
-plt + geom_col() + xlab("Manufacturing Company") + ylab("Number of Vehicles in Dataset") + #plot a boxplot with labels
-  theme(axis.text.x=element_text(angle=45,hjust=1)) #rotate the x-axis label 45 degrees
-theme(axis.text.x=element_text(angle=45,hjust=1)) #rotate the x-axis label 45 degrees
-theme(axis.text.x=element_text(angle=45,hjust=1)) #rotate the x-axis label 45 degrees
-mpg_summary <- subset(mpg,manufacturer=="toyota") %>% group_by(cyl) %>% summarize(Mean_Hwy=mean(hwy), .groups = 'keep') #create summary table
-plt <- ggplot(mpg_summary,aes(x=cyl,y=Mean_Hwy)) #import dataset into ggplot2
-plt + geom_line()
-plt + geom_line() + scale_x_discrete(limits=c(4,6,8)) + scale_y_continuous(breaks = c(15:30)) #add line plot with labels
-plt <- ggplot(mpg,aes(x=displ,y=cty,color=class,shape=drv)) #import dataset into ggplot2
-plt + geom_point() + labs(x="Engine Size (L)", y="City Fuel-Efficiency (MPG)", color="Vehicle Class",shape="Type of Drive") #add scatter plot with multiple aesthetics
-plt <- ggplot(mpg,aes(y=hwy)) #import dataset into ggplot2
-plt + geom_boxplot() #add boxplot
-plt <- ggplot(mpg,aes(x=manufacturer,y=hwy)) #import dataset into ggplot2
-plt + geom_boxplot() + theme(axis.text.x=element_text(angle=45,hjust=1)) #add boxplot and rotate x-axis labels 45 degrees
-plt <- ggplot(mpg,aes(x=manufacturer,y=hwy)) #import dataset into ggplot2
-plt + geom_boxplot() + #add boxplot
-  theme(axis.text.x=element_text(angle=45,hjust=1)) + #rotate x-axis labels 45 degrees 
-  geom_point() #overlay scatter plot on top  
-plt<- ggplot(mpg,aes(x=manufacturer,y=hwy))
-plt + geom_boxplot() +
-theme(axis.text.x=element_text(angle=45,hjust=1)) + 
-  geom_point() 
-plt <- ggplot(mpg_long,aes(x=manufacturer,y=Rating,color=MPG_Type)) #import dataset into ggplot2
-lt + geom_boxplot() + facet_wrap(vars(MPG_Type)) + #create multiple boxplots, one for each MPG type
-  theme(axis.text.x=element_text(angle=45,hjust=1),legend.position = "none") + xlab("Manufacturer") #rotate x-axis labels
-ggplot(mtcars,aes(x=wt)) + geom_density() #visualize distribution using density plot
-?shapiro.test()
-shapiro.test(mtcars$wt)
-?sample_n()
-population_table <- read.csv('used_car_data.csv',check.names = F,stringsAsFactors = F) #import used car dataset
-sample_table <- population_table %>% sample_n(50) #randomly sample 50 data points
-plt <- ggplot(sample_table,aes(x=log10(Miles_Driven))) #import dataset into ggplot2
-plt + geom_density() #visualize distribution using density plot
-model <- lm(qsec ~ hp,mtcars) #create linear model
-yvals <- model$coefficients['hp']*mtcars$hp +
-  model$coefficients['(Intercept)'] #determine y-axis values from linear model  
-yvals <- model$coefficients['hp']*mtcars$hp +
-  model$coefficients['(Intercept)'] #determine y-axis values from linear model
-plt <- ggplot(mtcars,aes(x=hp,y=qsec)) #import dataset into ggplot2
-plt + geom_point() + geom_line(aes(y=yvals), color = "red") #plot scatter and linear model
-lm(qsec ~ mpg + disp + drat + wt + hp,data=mtcars) #generate multiple linear regression model
+lm(vehicle_length ~ mpg,MechaCar_mpg) #create linear model
+lm(vehicle_weight ~ mpg,MechaCar_mpg) 
+lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD ,data=MechaCar_mpg)
+summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD ,data=MechaCar_mpg))
+  
+Suspension_Coil <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)      
+total_summary <- Suspension_Coil %>% group_by() %>% summarize(Mean=mean(PSI),median=median(PSI),Variance=var(PSI),SD= sd(PSI), .groups = 'keep') #create summary table with multiple columns
+lot_summary <- Suspension_Coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI),median=median(PSI),Variance=var(PSI),SD= sd(PSI), .groups = 'keep') #create summary table with multiple columns
+
