@@ -39,5 +39,27 @@ For the T_test we have:
 
 Assuming our significance level was the common 0.05 percent, our p-value is above our significance level. Therefore, we do not have sufficient evidence to reject the null hypothesis, and we would state that the two means are statistically similar. However for Lot3, it is leass than 0.05 which we have sufficient evidence to reject the null hypothesis.
 
+## Study Design: MechaCar vs Competition
 
+I am going to describe statistical study that can quantify how the MechaCar performs against the competition. The metrics would be of interest to a consumer: for a few examples, cost, city or highway fuel efficiency, horse power, maintenance cost, or safety rating.
+
+#### What metric or metrics are you going to test?
+the first metrics that I am going to test is MechaCar performance and the competition.
+
+#### What is the null hypothesis or alternative hypothesis?
+That the Cost between these two firleds are the same depends on the veicle, it helps the comany to target their costumers efficiency 
+
+![image](https://user-images.githubusercontent.com/100230706/172762761-c9f16625-f7af-4ec1-809a-f6cea5bfb82f.png)
+
+
+#### What statistical test would you use to test the hypothesis? And why?
+I will choose t-test since it is sample data type and also it is continuous
+
+![image](https://user-images.githubusercontent.com/100230706/172762620-9c47e0fa-5758-41cf-b779-833793fafd2a.png)
+
+#### What data is needed to run the statistical test?
+retrospective analysis to analyze and interpret a previously generated dataset where the outcome is already known. Retrospective analyses are helpful because there are no upfront costs to generate data and statistical results can be compared to the known outcomes. Depending on the dataset and input variables, there is a (potentially) limitless number of statistical questions that can be asked from the data.
+
+
+![image](https://user-images.githubusercontent.com/100230706/172762696-7c33679a-48c4-4536-95b7-576183f709d7.png)
 
