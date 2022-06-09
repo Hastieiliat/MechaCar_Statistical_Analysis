@@ -30,3 +30,14 @@ and summary table is
 ![image](https://user-images.githubusercontent.com/100230706/172725157-28d29595-36dc-4faf-a8bd-3fc979fcb60c.png)
 
 When we are comparing the total, the variance is 62 however for lot 3 the variance is 170 which is bigger than 100. Thus we are passing the border line. 
+
+## T-Tests on Suspension Coils
+
+For the T_test we have:
+
+![image](https://user-images.githubusercontent.com/100230706/172761311-762e84a1-f0f8-45e9-9ae4-9b57eafd426e.png)
+
+Assuming our significance level was the common 0.05 percent, our p-value is above our significance level. Therefore, we do not have sufficient evidence to reject the null hypothesis, and we would state that the two means are statistically similar. However for Lot3, it is leass than 0.05 which we have sufficient evidence to reject the null hypothesis.
+
+
+
